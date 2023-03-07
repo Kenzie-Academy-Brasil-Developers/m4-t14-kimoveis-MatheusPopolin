@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "tsnd --cls --rs src/app.ts",
+    "dev": "tsnd --cls --rs src/server.ts",
     "typeorm": "typeorm-ts-node-commonjs",
     "test": "jest --verbose --runInBand"
   },
