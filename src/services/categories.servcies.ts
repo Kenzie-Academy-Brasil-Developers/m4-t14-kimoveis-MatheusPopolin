@@ -43,7 +43,7 @@ export const listCategoryRealEstatesService = async (
         id: id,
       },
       relations: {
-        realStates: true,
+        realEstate: true,
       },
     });
 
