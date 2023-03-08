@@ -5,6 +5,11 @@ import {
   deleteUserController,
 } from "./users.controllers";
 import { loginController } from "./login.controllers";
+import {
+  createCategoryController,
+  listAllCategoriesController,
+  listCategoryRealEstatesController,
+} from "./categories.controller";
 
 export {
   createUserController,
@@ -12,4 +17,7 @@ export {
   updateUserController,
   deleteUserController,
   loginController,
+  createCategoryController,
+  listAllCategoriesController,
+  listCategoryRealEstatesController,
 };

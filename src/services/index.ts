@@ -5,6 +5,11 @@ import {
   deleteUserService,
 } from "./users.services";
 import { loginService } from "./login.services";
+import {
+  createCategoryService,
+  listAllCategoriesService,
+  listCategoryRealEstatesService,
+} from "./categories.servcies";
 
 export {
   createUserService,
@@ -12,4 +17,7 @@ export {
   updateUserService,
   deleteUserService,
   loginService,
+  createCategoryService,
+  listAllCategoriesService,
+  listCategoryRealEstatesService,
 };
