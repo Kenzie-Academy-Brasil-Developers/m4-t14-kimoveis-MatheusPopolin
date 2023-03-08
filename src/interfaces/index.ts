@@ -4,5 +4,6 @@ import {
   tUserReturn,
   tUserUpdate,
 } from "./users.interfaces";
+import { tLoginRequest } from "./login.interfaces";
 
-export { tUserRepo, tUserRequest, tUserReturn, tUserUpdate };
+export { tUserRepo, tUserRequest, tUserReturn, tUserUpdate, tLoginRequest };

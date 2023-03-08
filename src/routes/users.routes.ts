@@ -47,3 +47,5 @@ usersRoutes.delete(
   ensureHavePermission("admin"),
   deleteUserController
 );
+
+export default usersRoutes;
