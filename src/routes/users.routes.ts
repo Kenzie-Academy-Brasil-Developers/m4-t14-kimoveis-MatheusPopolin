@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createUserController,
+  deleteUserController,
   listAllUsersController,
   updateUserController,
 } from "../controllers";
@@ -37,4 +38,12 @@ usersRoutes.patch(
   ensureDataIsValid(updateUserSchema),
   ensureEmailIsUnused,
   updateUserController
+);
+
+usersRoutes.delete(
+  "/:id",
+  ensureIdExists,
+  ensureTokenIsValid,
+  ensureHavePermission("admin"),
+  deleteUserController
 );

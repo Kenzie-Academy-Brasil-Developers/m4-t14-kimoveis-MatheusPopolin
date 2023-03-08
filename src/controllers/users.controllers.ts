@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { tUserReturn } from "../interfaces";
 import {
   createUserService,
+  deleteUserService,
   listAllUsersService,
   updateUserService,
 } from "../services";
@@ -34,4 +35,13 @@ export const updateUserController = async (
   );
 
   return response.status(200).json(updatedUser);
+};
+
+export const deleteUserController = async (
+  request: Request,
+  response: Response
+) => {
+  await deleteUserService(Number(request.params.id));
+
+  return response.status(204).send();
 };

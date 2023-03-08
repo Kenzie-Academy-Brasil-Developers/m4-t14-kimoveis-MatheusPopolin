@@ -48,3 +48,15 @@ export const updateUserService = async (
 
   return parsedUpdateUser;
 };
+
+export const deleteUserService = async (id: number): Promise<void> => {
+  const userRepository: tUserRepo = AppDataSource.getRepository(User);
+
+  const user = await userRepository.findOne({
+    where: {
+      id: id,
+    },
+  });
+
+  await userRepository.softRemove(user!);
+};
