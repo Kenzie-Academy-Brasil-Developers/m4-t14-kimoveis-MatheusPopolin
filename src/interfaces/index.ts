@@ -1,3 +1,8 @@
-import { tUserRepo, tUserRequest, tUserReturn } from "./users.interfaces";
+import {
+  tUserRepo,
+  tUserRequest,
+  tUserReturn,
+  tUserUpdate,
+} from "./users.interfaces";
 
-export { tUserRepo, tUserRequest, tUserReturn };
+export { tUserRepo, tUserRequest, tUserReturn, tUserUpdate };

@@ -1,7 +1,12 @@
 import { z } from "zod";
 import { AppDataSource } from "../data-source";
 import { User } from "../entities";
-import { tUserRequest, tUserReturn, tUserRepo } from "../interfaces";
+import {
+  tUserRequest,
+  tUserReturn,
+  tUserRepo,
+  tUserUpdate,
+} from "../interfaces";
 import { returnUserSchema } from "../schemas";
 
 export const createUserService = async (
@@ -24,4 +29,22 @@ export const listAllUsersService = async (): Promise<tUserReturn[]> => {
   const parsedUsers: tUserReturn[] = z.array(returnUserSchema).parse(users);
 
   return parsedUsers;
+};
+
+export const updateUserService = async (
+  id: number,
+  payload: tUserUpdate
+): Promise<tUserReturn> => {
+  const usersRepository: tUserRepo = AppDataSource.getRepository(User);
+
+  const foundUser: User | null = await usersRepository.findOneBy({ id });
+
+  const updatedUser: User = await usersRepository.save({
+    ...foundUser,
+    ...payload,
+  });
+
+  const parsedUpdateUser: tUserReturn = returnUserSchema.parse(updatedUser);
+
+  return parsedUpdateUser;
 };

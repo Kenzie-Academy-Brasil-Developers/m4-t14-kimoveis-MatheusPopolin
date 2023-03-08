@@ -1,3 +1,7 @@
-import { createUserService, listAllUsersService } from "./users.services";
+import {
+  createUserService,
+  listAllUsersService,
+  updateUserService,
+} from "./users.services";
 
-export { createUserService, listAllUsersService };
+export { createUserService, listAllUsersService, updateUserService };
