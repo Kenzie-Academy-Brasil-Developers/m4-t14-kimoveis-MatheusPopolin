@@ -10,6 +10,10 @@ import {
   listAllCategoriesController,
   listCategoryRealEstatesController,
 } from "./categories.controller";
+import {
+  createRealEstateController,
+  listAllRealEstatesController,
+} from "./realEstate.controllers";
 
 export {
   createUserController,
@@ -20,4 +24,6 @@ export {
   createCategoryController,
   listAllCategoriesController,
   listCategoryRealEstatesController,
+  createRealEstateController,
+  listAllRealEstatesController,
 };

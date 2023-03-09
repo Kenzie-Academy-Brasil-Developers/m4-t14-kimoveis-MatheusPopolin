@@ -1,4 +1,5 @@
 import {
+  AfterLoad,
   Column,
   CreateDateColumn,
   Entity,
@@ -27,10 +28,10 @@ class RealEstate {
   @Column({ type: "integer" })
   size: number;
 
-  @CreateDateColumn({type: "date"})
+  @CreateDateColumn({ type: "date" })
   createdAt: string;
 
-  @UpdateDateColumn({type: "date"})
+  @UpdateDateColumn({ type: "date" })
   updatedAt: string;
 
   @OneToOne(() => Address, (address) => address.realEstate)
@@ -42,6 +43,11 @@ class RealEstate {
 
   @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
   schedules: Schedule[];
+
+  @AfterLoad()
+  convertToString() {
+    this.value = this.value.toString();
+  }
 }
 
 export default RealEstate;

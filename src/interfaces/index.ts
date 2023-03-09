@@ -6,6 +6,8 @@ import {
 } from "./users.interfaces";
 import { tLoginRequest } from "./login.interfaces";
 import { tCategoryRequest, tCategoryRepo } from "./categories.interfaces";
+import { tRealEstateRepo, tRealEstateRequest } from "./realEstate.interfaces";
+import { tAddressRepo } from "./addresses.interfaces";
 
 export {
   tUserRepo,
@@ -15,4 +17,7 @@ export {
   tLoginRequest,
   tCategoryRequest,
   tCategoryRepo,
+  tRealEstateRepo,
+  tRealEstateRequest,
+  tAddressRepo,
 };
