@@ -41,10 +41,12 @@ export const updateUserService = async (
 
   const foundUser: User | null = await usersRepository.findOneBy({ id });
 
-  const updatedUser: User = await usersRepository.save({
+  const updatedUserData: User = usersRepository.create({
     ...foundUser,
     ...payload,
-  });
+  })
+
+  const updatedUser: User = await usersRepository.save(updatedUserData);
 
   const parsedUpdateUser: tUserReturn = returnUserSchema.parse(updatedUser);
 
