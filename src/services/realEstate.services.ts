@@ -64,5 +64,10 @@ export const listAllRealEstatesService = async (): Promise<RealEstate[]> => {
     },
   });
 
+  realEstates.map(
+    (realEstate) =>
+      (realEstate.value = parseFloat(realEstate.value.toString()).toFixed(2))
+  );
+
   return realEstates;
 };

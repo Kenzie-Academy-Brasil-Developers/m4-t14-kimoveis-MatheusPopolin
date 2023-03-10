@@ -43,11 +43,6 @@ class RealEstate {
 
   @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
   schedules: Schedule[];
-
-  @AfterLoad()
-  convertToString() {
-    this.value = this.value.toString();
-  }
 }
 
 export default RealEstate;
