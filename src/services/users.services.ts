@@ -14,7 +14,9 @@ export const createUserService = async (
 ): Promise<tUserReturn> => {
   const usersRepository: tUserRepo = AppDataSource.getRepository(User);
 
-  const newUser: User = await usersRepository.save(payload);
+  const newUserData: User = usersRepository.create(payload)
+  
+  const newUser: User = await usersRepository.save(newUserData);
 
   const parsedNewUser: tUserReturn = returnUserSchema.parse(newUser);
 
