@@ -1,4 +1,3 @@
-import { QueryBuilder } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { RealEstate, Schedule, User } from "../entities";
 import { AppError } from "../errors";
@@ -109,7 +108,8 @@ export const listSchedulesService = async (
   const realEstateRepository: tRealEstateRepo =
     AppDataSource.getRepository(RealEstate);
 
-  const realEstateQueryBuilder = realEstateRepository.createQueryBuilder("real_estate")
+  const realEstateQueryBuilder =
+    realEstateRepository.createQueryBuilder("real_estate");
 
   const realEstateSchedules: RealEstate | null = await realEstateQueryBuilder
     .leftJoinAndSelect("real_estate.address", "address")
@@ -119,9 +119,9 @@ export const listSchedulesService = async (
     .where("real_estate.id = :id", { id: realEstateId })
     .getOne();
 
-    if (!realEstateSchedules) {
-      throw new AppError("RealEstate not found", 404);
-    }
+  if (!realEstateSchedules) {
+    throw new AppError("RealEstate not found", 404);
+  }
 
   return realEstateSchedules;
 };

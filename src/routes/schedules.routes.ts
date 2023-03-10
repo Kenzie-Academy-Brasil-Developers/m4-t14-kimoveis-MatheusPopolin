@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createScheduleController, listSchedulesController } from "../controllers";
+import {
+  createScheduleController,
+  listSchedulesController,
+} from "../controllers";
 import {
   ensureDataIsValid,
   ensureHavePermission,
