@@ -14,6 +14,10 @@ import {
   createRealEstateService,
   listAllRealEstatesService,
 } from "./realEstate.services";
+import {
+  createScheduleService,
+  listSchedulesService,
+} from "./schedules.services";
 
 export {
   createUserService,
@@ -26,4 +30,6 @@ export {
   listCategoryRealEstatesService,
   createRealEstateService,
   listAllRealEstatesService,
+  createScheduleService,
+  listSchedulesService,
 };

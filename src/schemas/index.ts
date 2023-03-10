@@ -6,6 +6,7 @@ import {
 import { loginSchema } from "./login.schemas";
 import { createCategorySchema } from "./categories.schemas";
 import { createRealEstateSchema } from "./realEstate.schemas";
+import { createScheduleSchema } from "./schedules.schemas";
 
 export {
   createUserSchema,
@@ -14,4 +15,5 @@ export {
   loginSchema,
   createCategorySchema,
   createRealEstateSchema,
+  createScheduleSchema,
 };
